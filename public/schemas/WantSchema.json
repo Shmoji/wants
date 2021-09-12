@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "title": "PersonalWantsList",
+  "type": "object",
+  "properties": {
+    "PersonalWants": {
+      "type": "array",
+      "title": "PersonalWants",
+      "items": {
+        "type": "object",
+        "title": "PersonalWant",
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "title",
+            "maxLength": 300
+          },
+          "details": {
+            "type": "string",
+            "title": "details",
+            "maxLength": 5000
+          }
+        }
+      }
+    }
+  },
+  "required": ["PersonalWants"]
+}
