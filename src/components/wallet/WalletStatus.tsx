@@ -10,7 +10,7 @@ export default function WalletStatus({ openModal }: { openModal: () => void }) {
         className="flex flex-row items-center px-2 cursor-pointer justify-self-end"
         onClick={() => openModal()}
       >
-        {active && account ? (
+        {active ? (
           <>
             <UserCircleIcon className="w-5 h-5 fill-current text-green-400" />
             <div className="ml-3 text-white align-middle whitespace-nowrap">

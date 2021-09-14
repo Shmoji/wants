@@ -7,6 +7,7 @@ import classNames from 'classnames'
 import ModalService from './modals/ModalService'
 import WalletModal from './wallet/WalletModal'
 import WalletStatus from './wallet/WalletStatus'
+import LoginModal from './LoginModal'
 
 type MenuItemType = {
   name: string,
@@ -72,7 +73,7 @@ export default function Header() {
             </div>
             <button onClick={() => router.push('/submitWant')} className="py-2 text-lg font-bold text-white rounded-lg w-44 bg-blue-600 hover:bg-blue-800">Add a WANT</button>
             <div className="z-20 hidden md:ml-6 md:flex md:items-center">
-              <WalletStatus openModal={() => ModalService.open(WalletModal)} />
+              <WalletStatus openModal={() => ModalService.open(LoginModal)} />
             </div>
             <div className="flex items-center -mr-2 md:hidden">
               <button

@@ -44,7 +44,7 @@ export default function Modal({
           <div className="flex pb-2">
             <button
               type="button"
-              className="p-2 ml-auto text-white transition duration-150 ease-in-out rounded-xl w-9 h-9 bg-very-dark-blue hover:text-gray-500 focus:outline-none focus:text-gray-500"
+              className="p-1 ml-auto text-white transition duration-150 ease-in-out rounded-xl w-9 h-9 bg-very-dark-blue hover:text-gray-500 focus:outline-none focus:text-gray-500"
               aria-label="Close"
               onClick={close}
             >

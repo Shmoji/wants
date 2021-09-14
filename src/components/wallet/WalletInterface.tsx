@@ -1,6 +1,5 @@
-import { useState, useContext, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { setWeb3, unsetWeb3 } from 'stores/WalletStore'
-// import { GlobalContext } from 'pages/_app'
 
 import CircleSpinner from '../animations/CircleSpinner'
 import Metamask from '../../assets/metamask.svg'
@@ -20,9 +19,6 @@ import {
   connectorsById,
   ConnectorIds,
 } from './Connectors'
-
-import ModalService from 'components/modals/ModalService'
-import DIDModal from 'components/DIDModal'
 
 export default function WalletInterface({
   onWalletConnected,
@@ -51,8 +47,6 @@ export default function WalletInterface({
       if (onWalletConnected) {
         onWalletConnected()
       }
-
-      ModalService.open(DIDModal) // Open modal to connect to DID after connecting to wallet
     }
 
     if (activatingConnector && activatingConnector === connector) {
@@ -119,11 +113,11 @@ export default function WalletInterface({
           onClick={() => onWalletClicked(wallet)}
           className={classNames(
             connectingWallet === 0
-              ? 'hover:border-transparent hover:bg-brand-blue hover:text-brand-gray cursor-pointer'
+              ? 'hover:border-transparent hover:bg-blue-500 hover:text-gray-100 cursor-pointer'
               : 'cursor-not-allowed',
             connectingWallet === wallet &&
-              'border-transparent bg-brand-blue text-brand-gray',
-            'flex-grow p-2 text-lg text-black dark:text-gray-300 dark:border-gray-500 border-2 rounded-lg border-brand-gray-1 font-sf-compact-medium'
+              'border-transparent bg-blue-500 text-gray-100',
+            'flex-grow p-2 text-lg text-black dark:text-gray-300 dark:border-gray-500 border-2 rounded-lg border-gray-200 font-sf-compact-medium'
           )}
         >
           <div className="flex flex-row items-center">
@@ -161,11 +155,11 @@ export default function WalletInterface({
           name="WalletConnect"
           wallet={ConnectorIds.WalletConnect}
         />
-        {/* <WalletButton
+        <WalletButton
           svg={<Coinbase className="w-7 h-7" />}
           name="Coinbase"
           wallet={ConnectorIds.Coinbase}
-        /> */}
+        />
         <WalletButton
           svg={<Fortmatic className="w-7 h-7" />}
           name="Fortmatic"
@@ -181,7 +175,7 @@ export default function WalletInterface({
       <div className="flex flex-row items-center mx-4 mb-4 ">
         {!active && <DotRed className="w-3 h-3" />}
         {active && <DotGreen className="w-3 h-3" />}
-        <p className="ml-2 text-brand-gray-2">
+        <p className="ml-2 text-black">
           {active ? 'Connected with: ' : 'Not connected'}
           {active && (
             <A
@@ -200,9 +194,9 @@ export default function WalletInterface({
             onClick={onDisconnectClicked}
             className={classNames(
               active
-                ? 'hover:border-transparent hover:bg-brand-blue hover:text-brand-gray cursor-pointer'
+                ? 'hover:border-transparent hover:bg-blue-500 hover:text-gray-100 cursor-pointer'
                 : 'cursor-not-allowed',
-              'p-2 text-xs text-center border-2 rounded-lg text-brand-gray-2 dark:border-gray-500 border-brand-gray-1 font-sf-compact-medium'
+              'p-2 text-xs text-center border-2 rounded-lg text-gray-600 dark:border-gray-500 border-gray-200 font-sf-compact-medium'
             )}
           >
             Disconnect
