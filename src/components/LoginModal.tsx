@@ -36,9 +36,6 @@ export default function LoginModal({ close }: { close: () => void }) {
 
     ceramic.setDID(did)
     await ceramic?.did?.authenticate()
-
-    const idx = new IDX({ ceramic })
-    window.idx = idx
   }
 
   return (

@@ -5,7 +5,7 @@ import { setWeb3 } from 'stores/WalletStore'
 import { injected, connectorsById } from './Connectors'
 
 export function useEagerConnect() {
-  const { activate, active, library } = useWeb3React()
+  const { account, activate, active, library } = useWeb3React()
 
   const [tried, setTried] = useState(false)
 

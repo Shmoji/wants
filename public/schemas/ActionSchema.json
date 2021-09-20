@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "title": "ActionsList",
+  "type": "object",
+  "properties": {
+    "Actions": {
+      "type": "array",
+      "title": "Actions",
+      "items": {
+        "type": "object",
+        "title": "Action",
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "title",
+            "maxLength": 300
+          },
+          "details": {
+            "type": "string",
+            "title": "details",
+            "maxLength": 5000
+          },
+          "wantId": {
+            "type": "string",
+            "title": "wantId"
+          }
+        }
+      }
+    }
+  },
+  "required": ["Actions"]
+}

@@ -1,13 +1,15 @@
 import type { NextPage } from 'next'
 import DefaultLayout from 'components/layouts/DefaultLayout'
 import { useWeb3React } from '@web3-react/core'
+import useIdx from 'utils/ceramic/useIdx'
 
 const Home: NextPage = () => {
   const { account } = useWeb3React()
+  const idx = useIdx()
 
   const logProfile = async () => {
     try {
-      const data = await window?.idx?.get(
+      const data = await idx?.get(
         'basicProfile',
         `${account}@eip155:4`
       )
