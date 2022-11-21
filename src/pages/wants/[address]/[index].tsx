@@ -1,4 +1,3 @@
-import { useWeb3React } from "@web3-react/core"
 import DefaultLayout from "components/layouts/DefaultLayout"
 import { PersonalWant } from "constants"
 import { GetServerSideProps } from "next"
